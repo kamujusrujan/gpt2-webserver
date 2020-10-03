@@ -2,6 +2,8 @@ import tensorflow as tf
 import gpt_2_simple as gpt2
 import os
 from flask import Flask, jsonify
+import time
+
 
 # model_type = os.environ('MODEL')
 model_type = '124M'
@@ -20,5 +22,7 @@ def generateText(start=None, length=500):
 
 @app.route('/get/<text>')
 async def response(text):
+    start_time = time.time()
     res = generateText(text)
+    print(f'executed in {0} time', time.time() - start_time)
     return jsonify({'status': 200, 'text': res})
