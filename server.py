@@ -3,7 +3,8 @@ import gpt_2_simple as gpt2
 import os
 from flask import Flask, jsonify
 
-model_type = os.environ('MODEL')
+# model_type = os.environ('MODEL')
+model_type = '124M'
 
 sess = gpt2.start_tf_sess()
 gpt2.load_gpt2(sess, model_name=model_type)
