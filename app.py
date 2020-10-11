@@ -126,4 +126,5 @@ async def homepage(request):
                          headers=response_header)
 
 if __name__ == '__main__':
-    uvicorn.run(app, host='0.0.0.0', port=int(os.environ.get('PORT', 8080)),debug= True,workers = 1  )
+    print('get path' ,os.environ.get('PORT', 8080) )
+    uvicorn.run(app, host='0.0.0.0', port=int(os.environ.get('PORT', 8080)),debug= True,workers = 1  )  
