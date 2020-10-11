@@ -51,7 +51,7 @@ import gc
 import time
 
 
-app = Starlette(debug=False)
+app = Starlette(debug=True)
 
 
 if not os.path.isdir(os.path.join("models", '124M')):
@@ -126,4 +126,4 @@ async def homepage(request):
                          headers=response_header)
 
 if __name__ == '__main__':
-    uvicorn.run(app, host='0.0.0.0', port=int(os.environ.get('PORT', 8080),debug= True,workers = 1  ))
+    uvicorn.run(app, host='0.0.0.0', port=int(os.environ.get('PORT', 8080)),debug= True,workers = 1  )
